@@ -1,0 +1,73 @@
+<style>
+    body{
+    background: url('https://media.giphy.com/media/uGkXpJfiBTKE0/giphy.gif') no-repeat;
+    background-size: cover;
+    color: black;
+    }
+    .head{
+        color: red;
+        font-weight: bolder;
+    }
+    section{
+    /* color: white; */
+    border-radius: 10px;
+    padding: 30px 30px;
+    position: relative;
+    padding-bottom: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    top: 20px;
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebtn{
+    opacity: 0;
+}
+</style>
+<section class="storyadd">
+<h3>Edit Your Story</h3>
+<div class="row">
+    <form action="/stories/{{story._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-pencil-alt prefix"></i>
+                <input type="text" id="title" name="title" value="{{story.title}}" required>
+                <label for="title" class="head">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-thermometer-full prefix"></i>
+                <select id="status" name="status" required>
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="status" class="head">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field ">
+                <h5>Tell Us Your Story:</h5>
+                <textarea id="body" name="body">{{story.body}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save Changes" class="btn">
+            <a href="/dashboard" class="btn btn-c"><i class="fas fa-times-circle"></i> Cancel</a>
+        </div>
+    </form>
+</div>
+</section>

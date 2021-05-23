@@ -1,0 +1,118 @@
+<section id="first-section">
+      <nav>
+        <div class="nav-wrapper">
+          <h3><i class="fas fa-book-reader"></i> MyBook</h3> 
+          <!-- <a class="button" href="#">Sign Up</a> -->
+        </div>
+      </nav>
+      <div class="container">
+        <div class="title">Welcome</div>
+        <div class="images">
+          <div class="image-wrapper" id="first">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/6.png" />
+          </div>
+          <div class="image-wrapper" id="second">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/5.png" />
+          </div>
+          <div class="image-wrapper" id="third">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/4.png" />
+          </div>
+          <div class="image-wrapper" id="forth">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/3.png" />
+          </div>
+          <div class="image-wrapper" id="fifth">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/2.png" />
+          </div>
+          <div class="image-wrapper" id="sixth">
+            <img src="https://raw.githubusercontent.com/vaibhav2110/GSAP-ScrollMagic/master/img/1.png" />
+          </div>
+          <div class="blur"></div>
+        </div>
+        <footer> 
+          <div class="footer-wrapper">
+            <div class="arrow bounce">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </footer>
+        <div class="content">
+          <div class="content-wrapper">
+            <div class="card" >
+                <div class="card-content">
+            <h3><i class="fas fa-book-reader"></i> MyBook</h3>
+            <div class="section">
+                <p class="lead">Share and see public and private stories</p>
+            </div>
+            <div class="divider"></div>
+            <div class="btn">
+                <a href="/auth/google" class="darked">
+                    <i class="fab fa-google left"></i> Log In With Google
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
+      </div>
+    </section>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+    let controller = new ScrollMagic.Controller();
+
+    let timeline = new TimelineMax();
+    timeline
+    .to('#sixth', 6, {
+        y: -700
+    })
+    .to('#fifth', 6, {
+        y: -500
+    }, '-=6')
+    .to('#forth', 6, {
+        y: -400
+    }, '-=6')
+    .to('#third', 6, {
+        y: -300
+    }, '-=6')
+    .to('#second', 6, {
+        y: -200
+    }, '-=6')
+    .to('#first', 6, {
+        y: -100
+    }, '-=6')
+    .to('.content, .blur', 6, {
+        top: '0%'
+    }, '-=6')
+    .to('.title, nav, .footer-wrapper', 6, {
+        y: -600,
+    }, '-=6')
+    .from('.one', 3, {
+        top: '40px',
+        autoAlpha: 0
+    }, '-=4')
+    .from('.two', 3, {
+        top: '40px',
+        autoAlpha: 0
+    }, '-=3.5')
+    .from('.three', 3, {
+        top: '40px',
+        autoAlpha: 0
+    }, '-=3.5')
+    .from('.four', 3, {
+        top: '40px',
+        autoAlpha: 0
+    }, '-=3.5')
+    .from('.text', 3, {
+        y: 60,
+        autoAlpha: 0
+    }, '-=4')
+
+    let scene = new ScrollMagic.Scene({
+        triggerElement: 'section',
+        duration: '200%',
+        triggerHook: 0
+    })
+    .setTween(timeline)
+    .setPin('section')
+    .addTo(controller);
+})
+    </script>

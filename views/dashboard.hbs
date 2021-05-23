@@ -1,0 +1,57 @@
+<style>
+    .btne{
+        background-color: rgb(38, 84, 233);
+    }
+    .btne:hover{
+        background-color: rgb(43, 128, 238);
+    }
+   
+</style> 
+<section> 
+<h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bold">Dashboard</h4>
+<h3>Welcome {{name}}</h3>
+<p>Here are your stories</p>
+
+{{#if stories}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each stories}}
+                <tr>
+                    <td>
+                        <a href="/stories/{{_id}}">{{title}}</a>
+                    </td>
+                    <td>
+                        {{formatDate createdAt 'llll'}}
+                    </td>
+                    <td>
+                        <span class="dash-status">{{status}}</span>
+                    </td>
+                    <td>
+                        <a href="/stories/edit/{{_id}}" class="btn btn-float btne">
+                            <i class="fas fa-user-edit"></i> Edit
+                        </a>
+
+                        <form action="/stories/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btnd"><i class="fas fa-trash-alt"></i> Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+
+<h4 style="background-color: rgba(250, 3, 3, 0.4); text-align:center">No Stories Created Yet......</h4>
+
+{{/if}}
+</section>
+
