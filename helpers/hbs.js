@@ -1,6 +1,6 @@
 const moment = require('moment')
-
-module.exports = {
+moment.locale(); 
+module.exports = { 
     formatDate: function(date,format){
         return moment(date).format(format)
     },
