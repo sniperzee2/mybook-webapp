@@ -1,4 +1,16 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Padauk&display=swap" rel="stylesheet">
+
 <style>
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .container {
+    flex: 1 0 auto;
+  }
     .btne{
         background-color: rgb(38, 84, 233);
         margin: 3px;
@@ -15,6 +27,10 @@
     
     .btnd:hover{
         background-color: gray;
+    }
+
+    .sidebtn{
+        visibility: hidden;
     }
 
 </style> 
@@ -60,9 +76,11 @@
     </table>
 {{else}}
 
-<h4 style="background-color: rgba(250, 3, 3, 0.4); text-align:center">No Stories Created Yet......</h4>
-
+   
+<h5 style="background-color: rgba(250, 3, 3, 0.4); text-align:center; padding:2px;font-family: 'Padauk', sans-serif;">No Stories Created Yet......Click  <a href="/stories/add" style="border-radius: 10px;" class="waves-effect waves-light btn side"><i class="fa fa-plus"></i> </a> To Add Your First Story </h5><br><br>
+<h6 style="font-family: 'Padauk', sans-serif;">Visit <a href="/stories" style="border-radius: 10px;" class="waves-effect waves-light btn side">ABOUT THE APP</a> Page To Explore The Features Of the App </h6>
 {{/if}}
 </section>
+
 
 
