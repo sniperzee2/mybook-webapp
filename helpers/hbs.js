@@ -1,8 +1,8 @@
 const moment = require('moment')
-moment.locale(); 
+// moment.locale("en-in"); 
 module.exports = { 
     formatDate: function(date,format){
-        return moment(date).format(format)
+        return moment(date).utcOffset("+05:30").format(format)
     },
 
     truncate: function (str, len) {
