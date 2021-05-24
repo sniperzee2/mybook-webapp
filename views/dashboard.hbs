@@ -1,16 +1,26 @@
 <style>
     .btne{
         background-color: rgb(38, 84, 233);
+        margin: 3px;
     }
     .btne:hover{
         background-color: rgb(43, 128, 238);
     }
-   
+
+    .btnd{
+        background-color: black;
+        color: white;
+        margin: 3px;
+    }
+    
+    .btnd:hover{
+        background-color: gray;
+    }
+
 </style> 
 <section> 
 <h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bold">Dashboard</h4>
 <h3>Welcome {{name}}</h3>
-<p>Here are your stories</p>
 
 {{#if stories}}
     <table class="striped">
@@ -54,4 +64,5 @@
 
 {{/if}}
 </section>
+
 
