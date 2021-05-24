@@ -1,7 +1,7 @@
 <style>
     body{
-    background: url('/css/editback.png') no-repeat;
-    
+    background: url('/css/newback.jpg') no-repeat;
+    font-weight: bolder;
     color: black;
     }
     .head{
@@ -14,12 +14,12 @@
     padding: 30px 30px;
     position: relative;
     padding-bottom: 10px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.219);
     border-radius: 6px;
     overflow: hidden;
     z-index: 10;
     top: 20px;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(2px);
     border-top: 1px solid rgba(255,255,255,0.05);
     border-left: 1px solid rgba(255,255,255,0.05);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
@@ -42,7 +42,7 @@
             <div class="input-field">
                 <i class="fas fa-pencil-alt prefix"></i>
                 <input type="text" id="title" name="title" value="{{story.title}}" required>
-                <label for="title" class="head">Title</label>
+                <label for="title" class="head" style="color: black;">Title</label>
             </div>
         </div>
 
@@ -53,13 +53,13 @@
                     <option value="public" selected>Public</option>
                     <option value="private">Private</option>
                 </select>
-                <label for="status" class="head">Status</label>
+                <label for="status" class="head" style="color: black;">Status</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field ">
-                <h5>Tell Us Your Story:</h5>
+                <h5 style="font-weight: bold;">Tell Us Your Story:</h5>
                 <textarea id="body" name="body">{{story.body}}</textarea>
             </div>
         </div>

@@ -19,7 +19,7 @@ router.post('/' ,ensureAuth, async(req,res) => {
         res.redirect('/dashboard')
     } catch (err) {
         console.error(err)
-        res.render('error/500')
+        res.render('/500')
     }
 })
 
@@ -39,7 +39,7 @@ router.get('/' , ensureAuth,  async (req,res) => {
     } 
     catch (err) {
         console.log(err)
-        res.render('error/500')
+        res.render('/500')
     }
 })
 
@@ -53,7 +53,7 @@ router.get('/:id' , ensureAuth, async (req,res) => {
             .lean()
         
             if (!story) {
-                return res.render('error/404')
+                return res.render('/404')
               }
               
         res.render('stories/show',{
@@ -62,7 +62,7 @@ router.get('/:id' , ensureAuth, async (req,res) => {
     } 
     catch (err) {
         console.error(err)
-        res.render('error/404')
+        res.render('/404')
     }
 })
 
@@ -76,7 +76,7 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
       }).lean()
   
       if (!story) {
-        return res.render('error/404')
+        return res.render('/404')
       }
   
       if (story.user != req.user.id) {
@@ -88,7 +88,7 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
       }
     } catch (err) {
       console.error(err)
-      return res.render('error/500')
+      return res.render('/500')
     }
   })
 
@@ -99,7 +99,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
       let story = await Story.findById(req.params.id).lean()
   
       if (!story) {
-        return res.render('error/404')
+        return res.render('/404')
       }
   
       if (story.user != req.user.id) {
@@ -114,7 +114,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
       }
     } catch (err) {
       console.error(err)
-      return res.render('error/500')
+      return res.render('/500')
     }
   })
 
@@ -127,7 +127,7 @@ router.delete('/:id' , ensureAuth, async (req,res) => {
     } 
     catch (err) {
         console.error(err)
-      return res.render('error/500')
+      return res.render('/500')
     }
 })
 
@@ -148,7 +148,7 @@ router.get('/user/:userId' , ensureAuth, async (req,res) => {
     } 
     catch (err) {
         console.error(err)
-      return res.render('error/500')
+      return res.render('/500')
     }
 })
 
