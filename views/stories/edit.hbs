@@ -1,6 +1,6 @@
 <style>
     body{
-    background: url('/css/newback.jpg') no-repeat;
+    background: url('/css/.jpg') no-repeat;
     font-weight: bolder;
     color: black;
     }
@@ -39,6 +39,17 @@
 </style>
 <section class="storyadd">
 <h3>Edit Your Story</h3>
+
+<div class="row">
+    <form action="/stories/{{story._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-user-plus prefix"></i>
+                <input type="text" id="name" name="name" value="{{story.title}}" required>
+                <label for="name" class="head" style="color: black;">Full Name</label>
+            </div>
+        </div>
 <div class="row">
     <form action="/stories/{{story._id}}" method="POST" class="col s12">
     <input type="hidden" name="_method" value="PUT">

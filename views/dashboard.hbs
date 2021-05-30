@@ -1,11 +1,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Padauk&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 <style>
     body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: url('/css/dashboard.jpg') no-repeat;
+    object-fit: cover;
+
   }
 
   .container {
@@ -35,8 +40,8 @@
 
 </style> 
 <section> 
-<h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bold">Dashboard</h4>
-<h3>Welcome {{name}}</h3>
+<h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bolder;">Dashboard</h4>
+<h3 style="font-family: 'Permanent Marker', cursive;">Welcome {{name}}</h3>
 
 {{#if stories}}
     <table class="striped">
@@ -52,7 +57,7 @@
             {{#each stories}}
                 <tr>
                     <td>
-                        <a href="/stories/{{_id}}">{{title}}</a>
+                        <a href="/stories/{{_id}}" style="font-weight:bold;">{{ stripTags (truncate title 5)}}</a>
                     </td>
                     <td>
                         {{formatDate createdAt 'llll'}}
@@ -62,12 +67,12 @@
                     </td>
                     <td>
                         <a href="/stories/edit/{{_id}}" class="btn btn-float btne">
-                            <i class="fas fa-user-edit"></i> Edit
+                            <i class="fas fa-pen-square"></i>
                         </a>
 
                         <form action="/stories/{{_id}}" method="POST" id="delete-form">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btnd"><i class="fas fa-trash-alt"></i> Delete</button>
+                            <button type="submit" class="btn btnd"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>

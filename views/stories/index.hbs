@@ -1,4 +1,9 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 <style>
+    body{
+           background: url('/css/dashback.jpg');
+    }
     .btn-read{
         background-color: black;
         color: blanchedalmond;
@@ -10,9 +15,53 @@
     .page-footer{
         visibility: hidden;
     }
+    .card{
+        border-radius: 20px;
+        background-image: url('/css/cardback.jpg');
+    }
+    .story{
+        font-family: 'Squada One', cursive;
+        letter-spacing: 2px;
+        text-decoration: underline;
+        font-size: 5rem;
+        backdrop-filter: blur(3px);
+    }
+    h5{
+        color: black;
+        font-weight: bolder;
+    }
+    p{
+        font-weight: bold;
+    }
+    h6{
+        color: red;
+        font-weight: bold;
+    }
+.card .card-action{
+    background: url('/css/cardback.jpg');
+}
+.card .card-action:last-child {
+    border-radius: 20px;
+    }
+    :root{
+    --maincolor:#323bb9;
+  }
+  
+  html::-webkit-scrollbar{
+    width:1rem;
+  }
+  
+  html::-webkit-scrollbar-track{
+    background:#080708;
+  }
+  
+  html::-webkit-scrollbar-thumb{
+    background:var(--maincolor);
+  }
+
 </style>
 
-<h1 class="center-align">Stories</h1>
+<h1 class="story center-align">STORIES</h1>
 
 <div class="row">
     {{#each stories}}
@@ -22,15 +71,16 @@
                     {{{editIcon user ../user _id}}}
                 </div>
                 <div class="card-content center-align">
-                    <h5>{{title}}</h5>
-                    <p>{{ stripTags (truncate body 100)}}</p>
+                    <h5 style="text-transform:uppercase;">{{stripTags (truncate title 15)}}</h5>
+                    <h6>Added By: {{name}}</h6>
+                    <p>{{ stripTags (truncate body 70)}}</p>
                     <br>
-                    <div class="chip">
+                    <div class="chip" style="background-color: black;">
                         <img src="{{user.image}}" alt="">
                         <a href="/stories/user/{{user._id}}"> {{user.displayName}} </a>
                     </div>
                 </div>
-                <div class="card-action center-align">
+                <div class="card-action center-align read">
                     <a href="/stories/{{_id}}" class="btn btn-read">Read More.....</a>
                 </div>
             </div>
