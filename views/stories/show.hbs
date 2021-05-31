@@ -30,7 +30,7 @@
         </h3>
         <div class="card story">
             <div class="card-content main" style="color: white;">
-                <span class="card-title" style="color: white;">{{story.createdAt}}</span>
+                <span class="card-title" style="color: white;">{{formatDate story.createdAt 'llll'}}</span>
                 <hr>
                 {{{story.body}}}
             </div>
