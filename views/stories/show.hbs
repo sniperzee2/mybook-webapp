@@ -1,3 +1,8 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cuprum&family=Indie+Flower&display=swap" rel="stylesheet">
+
 <style>
     .sidebtn{
         visibility: hidden;
@@ -25,14 +30,14 @@
 
 <div class="row">
     <div class="col s12 m8">
-        <h3 style="color: blanchedalmond;">{{story.title}}
+        <h3 style="color: blanchedalmond;font-weight:bold;font-size:2.8rem;font-family: 'Cuprum', sans-serif;">{{story.title}}
             <small>{{{editIcon story.user user story._id false}}}</small>
         </h3>
         <div class="card story">
             <div class="card-content main" style="color: white;">
-                <span class="card-title" style="color: white;">{{formatDate story.createdAt 'llll'}}</span>
-                <hr>
+                <span style="font-family: 'Indie Flower', cursive;font-size:1.7rem">
                 {{{story.body}}}
+                </span>
             </div>
         </div>
     </div>
@@ -43,7 +48,7 @@
                 <img src="{{story.user.image}}" class="circle responsive-img img-small">
             </div>
             <div class="card-action">
-                <a href="/stories/user/{{story.user._id}}" style="color:red;font-weight: bold;">More From {{story.user.firstName}}</a>
+                <a href="/stories/user/{{story.user._id}}" style="color:red;font-weight: bold;">More From {{story.name}}</a>
             </div>
         </div>
     </div>

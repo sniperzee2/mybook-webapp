@@ -67,7 +67,7 @@
             {{#each stories}}
                 <tr>
                     <td>
-                        <a href="/stories/{{_id}}" style="font-weight:bold;">{{ stripTags (truncate title 10)}}</a>
+                        <a href="/stories/{{_id}}" style="font-weight:bold;">{{ stripTags (truncate title 20)}}</a>
                     </td>
                     <td>
                         {{formatDate createdAt 'llll'}}
