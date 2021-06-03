@@ -37,10 +37,20 @@
     .sidebtn{
         visibility: hidden;
     }
-
+    .head{
+        display: flex;
+        flex-direction: row;
+    }
+    .review{
+        top: 20px;
+        margin-left: auto;
+    }
 </style> 
 <section> 
-<h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bolder;">Dashboard</h4>
+<div class="head">
+    <h4 style="font-family: 'Times New Roman', Times, serif; font-weight:bolder;">Dashboard</h4>
+    <a class="btn waves-effect red review" href="/review">Review The App</a>
+ </div>
 <h3 style="font-family: 'Permanent Marker', cursive;">Welcome {{name}}</h3>
 
 {{#if stories}}
@@ -57,7 +67,7 @@
             {{#each stories}}
                 <tr>
                     <td>
-                        <a href="/stories/{{_id}}" style="font-weight:bold;">{{ stripTags (truncate title 5)}}</a>
+                        <a href="/stories/{{_id}}" style="font-weight:bold;">{{ stripTags (truncate title 10)}}</a>
                     </td>
                     <td>
                         {{formatDate createdAt 'llll'}}

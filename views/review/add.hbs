@@ -1,0 +1,49 @@
+<style>
+     body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    object-fit: cover;
+  }
+
+  .container {
+    flex: 1 0 auto;
+  }
+</style>
+
+<h3>Please Comment Below</h3>
+
+<div class="row">
+    <form action="/review" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-user-plus prefix"></i>
+                <input type="text" id="name" name="name" required>
+                <label for="name" class="head">Full Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-pencil-alt prefix"></i>
+                <input type="text" id="review" name="review" required>
+                <label for="review" class="head">Review</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <i class="fas fa-thermometer-full prefix"></i>
+                <select id="status" name="status" required>
+                    <option value="publish" selected>Publish</option>
+                </select>
+                <label for="status" class="head">Status</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn btn-c"><i class="fas fa-times-circle"></i> Cancel</a>
+        </div>
+    </form>
+</div>
+<div>
+    <a href="review/viewreview" class="btn"> View Other User's Review</a>
+</div>
