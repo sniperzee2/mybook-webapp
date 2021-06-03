@@ -9,9 +9,20 @@
   .container {
     flex: 1 0 auto;
   }
-  .card{
-    border-radius: 30px;
-    background-image: url('/css/reviewcard.jpg');
+  :root{
+    --maincolor:#7bd1f3;
+  }
+  
+  html::-webkit-scrollbar{
+    width:1rem;
+  }
+  
+  html::-webkit-scrollbar-track{
+    background:#080708;
+  }
+  
+  html::-webkit-scrollbar-thumb{
+    background:var(--maincolor);
   }
 </style>
 
@@ -19,19 +30,28 @@
 
 <div class="row">
     {{#each reviews}}
-        <div class="col s12 m4">
-            <div class="card">
-                <div class="card-content center-align">
+        <div class="container">
+        <ul class="collapsible popout">
+            <li class="active">
+                <div class="collapsible-header" style="background-image: url('/css/reviewcard.jpg');">
+                <i class="fas fa-user-tie"></i>
                     <div class="chip">
                         <img src="{{user.image}}" alt="">
-                        <a href="/stories/user/{{user._id}}"> {{user.displayName}} </a>
+                         {{stripTags (truncate user.displayName 14)}} 
                     </div>
-                    <h5> {{stripTags ( truncate review 55)}}</h5>
-                </div>
-            </div>
+                    </div>
+                <div class="collapsible-body" style="background-color:rgba(150, 145, 145,0.8);color:white;">{{review}}</div>
+            </li>
+        </ul>
         </div>
     {{else}}
         <h4>No Reviews Yet.......</h4>
         <h1><i class="far fa-sad-tear"></i></h1>
     {{/each}}
 </div>
+<script>
+           document.addEventListener('DOMContentLoaded', function() {
+                    var collapse = document.querySelectorAll('.collapsible');
+                     M.Collapsible.init(collapse);
+                });
+</script>
