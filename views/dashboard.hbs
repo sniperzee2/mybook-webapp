@@ -82,7 +82,7 @@
 
                         <form action="/stories/{{_id}}" method="POST" id="delete-form">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btnd"><i class="fas fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btnd delete" onclick="ConfirmDelete()"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -96,6 +96,14 @@
 <h6 style="font-family: 'Padauk', sans-serif;">Visit <a href="/about" style="border-radius: 10px;" class="waves-effect waves-light btn side">ABOUT THE APP</a> Page To Explore The Features Of the App </h6>
 {{/if}}
 </section>
-
+<script>
+    function ConfirmDelete(){
+        var x = confirm("Do You Really Want To Delete This Story??");
+        if (x)
+        return true
+        else
+        return false
+    }
+</script>
 
 
